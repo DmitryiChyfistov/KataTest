@@ -28,6 +28,9 @@ public class Main {
             int num1;
             int num2;
             String[] operands = expression.split(" ");
+            if(operands.length > 3) {
+                throw new Exception("Не корректно введены данные");
+            }
             if ((isRoman(operands[0]) && isRoman(operands[2]))) {
                 if ((operands[0].length() < operands[2].length()) && (operands[1].equals("-"))) {
                     throw new Exception("Значение не может быть отрицательным в римских цифрах");
@@ -38,6 +41,11 @@ public class Main {
                 if (operands[1].equals("*"))
                         System.out.println(romanNumerals[(number(operands[0]) * (number(operands[2])))]);
                     }
+            if ((isRoman(operands[0]) && isRoman(operands[2]))) {
+                if (operands[1].equals("+"))
+                    System.out.println(romanNumerals[(number(operands[0]) + (number(operands[2])))]);
+            }
+
 
             if ((isRoman(operands[0]) && isRoman(operands[2]))) {
                 if (operands[1].equals("/")) {
